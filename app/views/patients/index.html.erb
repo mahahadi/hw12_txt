@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Patients</h1>
+
+<table class='table table table-striped  table table-bordered '>
+  <thead>
+    <tr>
+      <th class='success'>First name</th>
+      <th class='success'>Last name</th>
+      <th class='success' >Email</th>
+      <th class='success'>Phone</th>
+      <th class='success'>Doctor</th>
+      <th class='success'>Active State</th>
+      <th class='success'colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr class="info">
+        <td><%= patient.first_name %></td>
+        <td><%= patient.last_name %></td>
+        <td><%= patient.email %></td>
+        <td><%= number_to_phone(patient.phone) %></td>
+        <td><%= patient.doctor.first_name %></td>
+        <td><%= patient.active_state %></td>
+        <td class='danger'><%= link_to 'Show', patient ,class:"btn btn-success" %></td>
+        <td class='warning'><%= link_to 'Edit', edit_patient_path(patient), class:"btn btn-primary" %></td>
+        <td class='info'><%= link_to 'Destroy', patient, method: :delete, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path, class:"btn btn-info" %>

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+  
   <title>Workspace</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
+<body >
 <%= yield %>
+<footer>
+  <br>
+  <p>Posted by: Maha Hadi</p>
+  <p>Contact information: <a href="mailto:mhadi5898@gmail.com">mhadi5898@gmail.com</a>.</p>
+</footer>
 
 </body>
 </html>
